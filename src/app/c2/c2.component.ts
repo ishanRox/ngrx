@@ -11,13 +11,16 @@ import { CounterState } from '../state/counter.state';
   styleUrls: ['./c2.component.css']
 })
 export class C2Component implements OnInit {
-
   constructor(private store: Store<{ ishanCounter: CounterState }>) {}
 
   ngOnInit() {}
-  
-  onI=()=>this.store.dispatch(increment());
-  onD=()=>this.store.dispatch(decrement());
-  onR=()=>this.store.dispatch(reset());
-
+  onI() {
+    this.store.dispatch(increment());
+  }
+  onD() {
+    this.store.dispatch(decrement());
+  }
+  onR() {
+    this.store.dispatch(reset());
+  }
 }
