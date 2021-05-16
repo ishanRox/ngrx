@@ -15,6 +15,7 @@ export class C3Component implements OnInit {
   constructor(private store: Store<{ ishanCounter: CounterState }>) {}
   ngOnInit(): void {
     this.store.select('ishanCounter').subscribe(data => {
+      console.log('name value changed');
       this.name = data.name;
     });
   }
