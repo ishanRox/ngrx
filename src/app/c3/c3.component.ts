@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./c3.component.css']
 })
 export class C3Component implements OnInit {
-  customeVal: number;
+  customVal: number;
 
   constructor() {}
 
   ngOnInit() {}
 
   onCusIncrement() {
-    console.log(this.customeVal);
+    console.log(this.customVal);
   }
 }
