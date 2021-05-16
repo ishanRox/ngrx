@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { customIncrement } from '../state/counter.actions';
+import { changeName, customIncrement } from '../state/counter.actions';
 import { CounterState } from '../state/counter.state';
 
 @Component({
@@ -10,13 +10,21 @@ import { CounterState } from '../state/counter.state';
 })
 export class C3Component implements OnInit {
   customVal: number;
+  name: string;
 
-  constructor(private store:Store<{ishanCounter:CounterState}>) {}
-
-  ngOnInit() {}
+  constructor(private store: Store<{ ishanCounter: CounterState }>) {}
+  ngOnInit(): void {
+    this.store.select('ishanCounter').subscribe(data => {
+      this.name = data.name;
+    });
+  }
 
   onCusIncrement() {
     console.log(this.customVal);
-    this.store.dispatch(customIncrement({value:this.customVal}))
+    this.store.dispatch(customIncrement({ value: this.customVal }));
+  }
+
+  onChangeName(){
+    this.store.dispatch(changeName());
   }
 }
