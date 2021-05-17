@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
+import { getCounter } from '../state/counter.selectors';
 import { CounterState } from '../state/counter.state';
 
 @Component({
@@ -15,8 +16,8 @@ export class C1Component implements OnInit {
 
   ngOnInit() {
     this.store
-      .select('ishanCounter')
-      .subscribe(data => console.log('name changed'));
+      .select(getCounter)
+      .subscribe(counter => console.log('value changed '+counter));
 
     this.counter$ = this.store.select('ishanCounter');
   }

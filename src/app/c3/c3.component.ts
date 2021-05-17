@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { changeName, customIncrement } from '../state/counter.actions';
+import { getName } from '../state/counter.selectors';
 import { CounterState } from '../state/counter.state';
 
 @Component({
@@ -14,9 +15,9 @@ export class C3Component implements OnInit {
 
   constructor(private store: Store<{ ishanCounter: CounterState }>) {}
   ngOnInit(): void {
-    this.store.select('ishanCounter').subscribe(data => {
+    this.store.select(getName).subscribe(name => {
       console.log('name value changed');
-      this.name = data.name;
+      this.name = name;
     });
   }
 
