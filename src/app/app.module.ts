@@ -14,11 +14,12 @@ import { C3Component } from './c3/c3.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,
   StoreModule.forRoot({ishanCounter:counterReducer}) ,AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, C1Component, C2Component, C3Component, HomeComponent, CounterComponent ],
+  declarations: [ AppComponent, HelloComponent, C1Component, C2Component, C3Component, HomeComponent, CounterComponent, HeaderComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
