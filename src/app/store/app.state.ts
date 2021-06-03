@@ -11,6 +11,6 @@ export interface AppState {
 
 //reducers of the app
 export const appReducer = {
-  counter: counterReducer,
+  ishanCounter: counterReducer,
   posts: postsReducer
 };
