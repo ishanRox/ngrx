@@ -1,11 +1,11 @@
 import { Post } from '../../models/post.model';
 
 export interface PostState {
-  posts: Post[];
+  postList: Post[];
 }
 
 export const initialState: PostState = {
-  posts: [
+  postList: [
     {
       id: '1',
       title: 'sample title 1',
